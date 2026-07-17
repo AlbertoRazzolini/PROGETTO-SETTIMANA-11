@@ -1,8 +1,9 @@
 .sidebar {
-  background-color: var(--color-sidebar-bg);
+  background-color: var(--color-sidebar-bg) !important;
   color: var(--color-text-primary);
-  min-height: 100vh;
-  padding: 24px 16px;
+  min-height: 100vh; /* fallback */
+  min-height: 100dvh;
+  padding: 24px !important;
   display: flex;
   flex-direction: column;
 }
@@ -30,10 +31,20 @@
 
 .sidebar-search {
   margin-bottom: 24px;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sidebar-auth {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-auth-btn {
+  width: 85%;
 }
 
 .sidebar-footer-links {
@@ -44,4 +55,28 @@
 .sidebar-footer-links a {
   color: var(--color-text-muted);
   text-decoration: none;
+}
+
+.sidebar-mobile-bar {
+  background-color: var(--color-sidebar-bg);
+  padding: 12px 16px;
+}
+
+.sidebar-logo-mobile {
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidebar-burger {
+  border: none;
+  background: none;
+  color: var(--color-text-primary);
+  font-size: 1.3rem;
+  padding: 4px 8px;
+}
+
+.sidebar-offcanvas {
+  background-color: var(--color-sidebar-bg) !important;
 }
