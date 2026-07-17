@@ -26,12 +26,12 @@ export default function SongCard({ track }) {
 
   return (
     <Card className="song-card" onClick={handleCardClick}>
-      <Card.Img variant="top" src={track.album.cover_medium} alt={track.title} />
+      <Card.Img variant="top" src={track.album.cover_medium} alt={track.title} loading="lazy" />
       <Card.Body className="text-center">
         <Card.Text className="song-card-title" title={track.title}>
-          Track: &quot;{track.title}&quot;
+          {track.title}
         </Card.Text>
-        <Card.Text className="song-card-artist">Artist: {track.artist.name}</Card.Text>
+        <Card.Text className="song-card-artist">{track.artist.name}</Card.Text>
         <button
           type="button"
           className="song-card-heart"

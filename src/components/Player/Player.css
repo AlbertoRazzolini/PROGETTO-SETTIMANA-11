@@ -28,8 +28,23 @@
   border-radius: 4px;
 }
 
+.player-track-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .player-track-title {
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.player-track-artist {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -73,6 +88,11 @@
   .player-track-title {
     max-width: 120px;
     font-size: 0.85rem;
+  }
+
+  .player-track-artist {
+    max-width: 120px;
+    font-size: 0.7rem;
   }
 
   .player-controls {

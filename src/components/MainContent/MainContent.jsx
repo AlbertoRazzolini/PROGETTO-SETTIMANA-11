@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Container, Row, Col, Spinner, Alert } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { Container, Row, Col, Spinner, Alert, Button } from "react-bootstrap";
 import SongCard from "../SongCard/SongCard";
+import { fetchSearchResults } from "../../redux/musicSlice";
+import { searchTracks } from "../../api/deezer";
 import "./MainContent.css";
 
 const DEFAULT_SECTIONS = [
@@ -11,22 +13,24 @@ const DEFAULT_SECTIONS = [
 ];
 
 export default function MainContent() {
+  const dispatch = useDispatch();
   const { searchQuery, searchResults, isLoading, isError } = useSelector(
     (state) => state.music
   );
   const [defaultSections, setDefaultSections] = useState([]);
   const [isDefaultLoading, setIsDefaultLoading] = useState(true);
 
+  const handleRetry = () => {
+    dispatch(fetchSearchResults(searchQuery));
+  };
+
   useEffect(() => {
     async function loadDefaultSections() {
       try {
         const sections = await Promise.all(
           DEFAULT_SECTIONS.map(async ({ title, query }) => {
-            const response = await fetch(
-              `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`
-            );
-            const { data } = await response.json();
-            return { title, tracks: data.slice(0, 4) };
+            const tracks = await searchTracks(query);
+            return { title, tracks: tracks.slice(0, 4) };
           })
         );
         setDefaultSections(sections);
@@ -51,12 +55,28 @@ export default function MainContent() {
   if (isError) {
     return (
       <Container className="main-content-status">
-        <Alert variant="danger">Errore durante la ricerca. Riprova.</Alert>
+        <Alert variant="danger">Errore durante la ricerca.</Alert>
+        <Button variant="outline-light" onClick={handleRetry}>
+          Riprova
+        </Button>
       </Container>
     );
   }
 
   if (searchResults.length === 0) {
+    if (searchQuery) {
+      return (
+        <Container className="main-content-status">
+          <p className="main-content-no-results">
+            Nessun risultato per &quot;{searchQuery}&quot;
+          </p>
+          <Button variant="outline-light" onClick={handleRetry}>
+            Riprova
+          </Button>
+        </Container>
+      );
+    }
+
     if (isDefaultLoading) {
       return (
         <Container className="main-content-status">

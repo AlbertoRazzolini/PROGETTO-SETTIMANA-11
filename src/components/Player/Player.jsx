@@ -15,7 +15,10 @@ export default function Player() {
               alt={currentTrack.title}
               className="player-track-image"
             />
-            <span className="player-track-title">{currentTrack.title}</span>
+            <div className="player-track-text">
+              <span className="player-track-title">{currentTrack.title}</span>
+              <span className="player-track-artist">{currentTrack.artist}</span>
+            </div>
           </>
         )}
       </div>

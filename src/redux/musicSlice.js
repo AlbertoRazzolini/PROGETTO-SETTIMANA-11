@@ -1,18 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { searchTracks } from "../api/deezer";
 
 // Thunk asincrono: cerca brani su Deezer tramite il proxy Strive
 export const fetchSearchResults = createAsyncThunk(
   "music/fetchSearchResults",
-  async (query) => {
-    const response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(query)}`
-    );
-    if (!response.ok) {
-      throw new Error("Errore nella ricerca dei brani");
-    }
-    const { data: tracks } = await response.json();
-    return tracks;
-  }
+  (query) => searchTracks(query)
 );
 
 const initialState = {

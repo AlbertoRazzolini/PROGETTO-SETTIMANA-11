@@ -19,8 +19,10 @@ export default function Sidebar() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      dispatch(fetchSearchResults(searchQuery));
+    const trimmedQuery = searchQuery.trim();
+    if (trimmedQuery) {
+      dispatch(setSearchQuery(trimmedQuery));
+      dispatch(fetchSearchResults(trimmedQuery));
       setShow(false);
     }
   };
