@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, InputGroup } from "react-bootstrap";
 import { FaHome, FaBook } from "react-icons/fa";
 import { setSearchQuery, fetchSearchResults, resetSearch } from "../../redux/musicSlice";
+import "./Sidebar.css";
 
 export default function Sidebar() {
   const dispatch = useDispatch();

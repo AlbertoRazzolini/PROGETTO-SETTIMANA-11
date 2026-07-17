@@ -1,0 +1,18 @@
+:root {
+  --color-bg-gradient-start: #2b3d54;
+  --color-bg-gradient-end: #121212;
+  --color-sidebar-bg: #000000;
+  --color-player-bg: #181818;
+  --color-text-primary: #ffffff;
+  --color-text-muted: #b3b3b3;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.main-col {
+  background: linear-gradient(180deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+  color: var(--color-text-primary);
+}
