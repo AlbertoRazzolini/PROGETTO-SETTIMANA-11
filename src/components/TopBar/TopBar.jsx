@@ -1,3 +1,7 @@
 export default function TopBar() {
-  return null;
+  return (
+    <nav className="topbar">
+      <p>TopBar (Step 4)</p>
+    </nav>
+  );
 }
