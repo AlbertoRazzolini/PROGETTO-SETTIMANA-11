@@ -1,1 +1,19 @@
-/* Stili TopBar — Step 6 */
+.topbar {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 16px;
+  flex-wrap: wrap;
+}
+
+.topbar-link {
+  color: var(--color-text-muted) !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.topbar-link:hover {
+  color: var(--color-text-primary) !important;
+}

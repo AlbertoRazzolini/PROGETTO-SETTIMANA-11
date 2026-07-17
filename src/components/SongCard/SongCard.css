@@ -1,1 +1,33 @@
-/* Stili SongCard — Step 6 */
+.song-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.song-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.song-card-title,
+.song-card-artist {
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.song-card-artist {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.song-card-heart {
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  padding: 4px;
+  margin-top: 8px;
+}
