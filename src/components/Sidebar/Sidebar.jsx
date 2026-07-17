@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, InputGroup, Offcanvas } from "react-bootstrap";
 import { FaHome, FaBook, FaBars } from "react-icons/fa";
 import { setSearchQuery, fetchSearchResults, resetSearch } from "../../redux/musicSlice";
+import spotifyLogo from "../../assets/spotify-logo.svg";
 import "./Sidebar.css";
 
 export default function Sidebar() {
@@ -28,6 +29,7 @@ export default function Sidebar() {
     <>
       <div className="sidebar-mobile-bar d-flex d-md-none align-items-center justify-content-between">
         <a href="#" className="sidebar-logo-mobile" onClick={handleLogoClick}>
+          <img src={spotifyLogo} alt="spotify logo" className="sidebar-logo-icon" />
           Spotify
         </a>
         <Button
@@ -50,6 +52,7 @@ export default function Sidebar() {
         <Offcanvas.Header closeButton closeVariant="white" className="d-md-none" />
         <Offcanvas.Body className="sidebar">
           <a href="#" className="sidebar-logo" onClick={handleLogoClick}>
+            <img src={spotifyLogo} alt="spotify logo" className="sidebar-logo-icon" />
             Spotify
           </a>
 
@@ -72,14 +75,14 @@ export default function Sidebar() {
                 value={searchQuery}
                 onChange={(e) => dispatch(setSearchQuery(e.target.value))}
               />
-              <Button type="submit" variant="light">
+              <Button type="submit" className="search-go-btn">
                 GO
               </Button>
             </InputGroup>
           </Form>
 
           <div className="sidebar-auth">
-            <Button variant="light" type="button" className="sidebar-auth-btn mb-2 rounded-pill">
+            <Button variant="outline-light" type="button" className="sidebar-auth-btn mb-2 rounded-pill">
               Sign Up
             </Button>
             <Button variant="outline-light" type="button" className="sidebar-auth-btn rounded-pill">
