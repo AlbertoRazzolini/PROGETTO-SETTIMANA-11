@@ -54,3 +54,36 @@
 .player-play-btn {
   font-size: 1.4rem;
 }
+
+@media (max-width: 575.98px) {
+  .player {
+    padding: 8px 12px;
+  }
+
+  .player-track-info {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .player-track-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .player-track-title {
+    max-width: 120px;
+    font-size: 0.85rem;
+  }
+
+  .player-controls {
+    gap: 12px;
+  }
+
+  .player-control-btn {
+    font-size: 0.9rem;
+  }
+
+  .player-play-btn {
+    font-size: 1.1rem;
+  }
+}

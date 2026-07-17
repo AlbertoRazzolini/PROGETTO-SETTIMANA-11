@@ -17,3 +17,10 @@
 .topbar-link:hover {
   color: var(--color-text-primary) !important;
 }
+
+@media (max-width: 767.98px) {
+  .topbar {
+    gap: 16px;
+    padding: 12px;
+  }
+}

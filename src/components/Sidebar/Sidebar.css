@@ -116,8 +116,13 @@
 
 .sidebar-offcanvas {
   background-color: var(--color-sidebar-bg) !important;
-  position: sticky !important;
-  top: 0;
-  height: calc(100vh - var(--player-height)) !important; /* fallback */
-  height: calc(100dvh - var(--player-height)) !important;
+}
+
+@media (min-width: 768px) {
+  .sidebar-offcanvas {
+    position: sticky !important;
+    top: 0;
+    height: calc(100vh - var(--player-height)) !important; /* fallback */
+    height: calc(100dvh - var(--player-height)) !important;
+  }
 }

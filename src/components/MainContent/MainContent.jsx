@@ -72,7 +72,7 @@ export default function MainContent() {
             <h2 className="main-content-title">{section.title}</h2>
             <Row className="g-4 justify-content-around">
               {section.tracks.map((track) => (
-                <Col key={track.id} xs={6} sm={4} md={3} lg={2}>
+                <Col key={track.id} xs={6} sm={6} md={3} lg={2}>
                   <SongCard track={track} />
                 </Col>
               ))}

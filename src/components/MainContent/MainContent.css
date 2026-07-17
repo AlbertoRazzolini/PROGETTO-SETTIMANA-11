@@ -19,3 +19,9 @@
 .main-content-section {
   margin-bottom: 40px;
 }
+
+@media (max-width: 767.98px) {
+  .main-content {
+    padding: 16px;
+  }
+}
