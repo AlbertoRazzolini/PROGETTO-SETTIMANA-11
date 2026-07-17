@@ -5,6 +5,7 @@
   --color-player-bg: #181818;
   --color-text-primary: #ffffff;
   --color-text-muted: #b3b3b3;
+  --player-height: 90px;
 }
 
 body {
@@ -15,4 +16,5 @@ body {
 .main-col {
   background: linear-gradient(180deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
   color: var(--color-text-primary);
+  padding-bottom: var(--player-height);
 }

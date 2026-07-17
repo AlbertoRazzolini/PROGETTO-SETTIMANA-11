@@ -81,19 +81,21 @@ export default function Sidebar() {
             </InputGroup>
           </Form>
 
-          <div className="sidebar-auth">
-            <Button variant="outline-light" type="button" className="sidebar-auth-btn mb-2 rounded-pill">
-              Sign Up
-            </Button>
-            <Button variant="outline-light" type="button" className="sidebar-auth-btn rounded-pill">
-              Login
-            </Button>
-          </div>
+          <div className="sidebar-fixed-footer">
+            <div className="sidebar-auth">
+              <Button variant="outline-light" type="button" className="sidebar-auth-btn mb-2 rounded-pill">
+                Sign Up
+              </Button>
+              <Button variant="outline-light" type="button" className="sidebar-auth-btn rounded-pill">
+                Login
+              </Button>
+            </div>
 
-          <div className="sidebar-footer-links">
-            <a href="#" onClick={(e) => e.preventDefault()}>Cookie Policy</a>
-            {" | "}
-            <a href="#" onClick={(e) => e.preventDefault()}>Privacy</a>
+            <div className="sidebar-footer-links">
+              <a href="#" onClick={(e) => e.preventDefault()}>Cookie Policy</a>
+              {" | "}
+              <a href="#" onClick={(e) => e.preventDefault()}>Privacy</a>
+            </div>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

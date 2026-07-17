@@ -1,11 +1,11 @@
 .sidebar {
   background-color: var(--color-sidebar-bg) !important;
   color: var(--color-text-primary);
-  min-height: 100vh; /* fallback */
-  min-height: 100dvh;
+  height: 100% !important;
   padding: 24px !important;
   display: flex;
   flex-direction: column;
+  overflow-y: visible !important;
 }
 
 .sidebar-logo {
@@ -61,8 +61,11 @@
   margin-right: auto;
 }
 
-.sidebar-auth {
+.sidebar-fixed-footer {
   margin-top: auto;
+}
+
+.sidebar-auth {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,4 +116,8 @@
 
 .sidebar-offcanvas {
   background-color: var(--color-sidebar-bg) !important;
+  position: sticky !important;
+  top: 0;
+  height: calc(100vh - var(--player-height)) !important; /* fallback */
+  height: calc(100dvh - var(--player-height)) !important;
 }

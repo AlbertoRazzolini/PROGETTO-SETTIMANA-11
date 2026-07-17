@@ -13,7 +13,9 @@
   min-height: 300px;
 }
 
-.main-content-empty {
-  color: var(--color-text-muted);
-  font-size: 1.1rem;
+.main-content-home {
+}
+
+.main-content-section {
+  margin-bottom: 40px;
 }
