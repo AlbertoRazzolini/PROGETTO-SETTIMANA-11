@@ -1,1 +1,8 @@
-// Store Redux — configurato allo Step 1
+import { configureStore } from "@reduxjs/toolkit";
+import musicReducer from "./musicSlice";
+
+export const store = configureStore({
+  reducer: {
+    music: musicReducer,
+  },
+});
